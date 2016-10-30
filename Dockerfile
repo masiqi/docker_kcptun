@@ -16,6 +16,7 @@ RUN set -ex \
   && curl -sSL $KCPTUN_URL | tar xz \
   && chmod +x ./* \
   && mv ./server_linux_amd64 /usr/local/bin \
+  && rm ./client_linux_amd64 \
   && apk del .build-deps
 
 ENV TARGET_ADDR 127.0.0.1
